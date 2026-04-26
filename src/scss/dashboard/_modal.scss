@@ -1,0 +1,66 @@
+@use "sass:color";
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.modal{
+    position: absolute;
+    background-color: rgba($color: v.$negro, $alpha: 0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .formulario{
+        width: 60rem;
+        max-width: 90vw;
+        background-color: v.$grisClaro;
+        padding: 2rem;
+        margin: 0 auto;
+        transition-property: all;
+        transition-duration: 520ms;
+        transition-timing-function: ease-in-out;
+        transform: translateY(-30rem);
+        opacity: 0;
+        border-radius: 1rem;
+
+        input[type="text"]{
+            border: 1px solid v.$gris;
+            border-radius: .5rem;
+        }
+
+        legend{
+            font-size: 2rem;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .opciones{
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .cerrar-modal{
+            @include m.boton(v.$rojo, v.$blanco);
+        }
+        
+        .submit-nueva-tarea{
+            @include m.boton(v.$azul, v.$blanco);
+        }
+
+        &.animar{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+
+        &.cerrar{
+            transform: translateY(-200%);
+            opacity: 0;
+        }
+    }
+
+}

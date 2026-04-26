@@ -1,0 +1,19 @@
+@use "sass:color";
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.confirmar{
+    .uptask{
+        @include m.textoDegradado(v.$indigo, -25%);
+    }
+
+    .acciones{
+        justify-content: center;
+        a{
+            color: v.$indigo;
+            &:hover{
+                color: color.adjust(v.$indigo, $lightness: -15%);
+            }
+        }
+    }
+}

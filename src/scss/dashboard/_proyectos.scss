@@ -1,0 +1,60 @@
+@use "sass:color";
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.no-proyecto{
+
+    a{
+        color: v.$indigo;
+    }
+}
+
+.listado-proyecto{
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+    @include m.grid(1, 2rem);
+
+    @include m.tablet{
+        @include m.grid(2, 2rem)
+    }
+    @include m.desktop{
+        @include m.grid(3, 2rem)
+    }
+
+    .proyecto{
+        background-color: color.adjust(v.$azul, $lightness: 5%);
+        min-height: 12rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        line-height: 2;
+        border-radius: .5rem;
+        position: relative;
+
+        &:hover{
+            background-color: color.adjust(v.$azul, $lightness: -10%);
+        }
+
+        a{
+            color: v.$blanco;
+            text-transform: uppercase;
+            font-weight: 700;
+            max-width: 80%;
+        }
+
+        .eliminar-proyecto{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 3.5rem;
+            cursor: pointer;
+
+            .icono-eliminar{
+                fill: #b12222;
+            }
+        }
+    }
+}

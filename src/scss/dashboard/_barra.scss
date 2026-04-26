@@ -1,0 +1,61 @@
+@use "sass:color";
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.barra-mobile{
+    gap: 1rem;
+    background-color: v.$azul;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include m.tablet{
+        display: none;
+    }
+
+    h1{
+        color: v.$blanco;
+        margin: 0;
+    }
+}
+
+.menu{
+    img{
+        width: 8rem; 
+        cursor: pointer;
+    }
+}
+
+.barra{
+    display: none;
+    
+    p{
+        margin: 0;
+    }
+    
+    .cerrar-session{
+        color: v.$blanco;
+        text-align: center;
+        background-color: v.$rojo;
+        padding: 1rem;
+        border-radius: .5rem;
+        transition-property: background-color;
+        transition-duration: 300ms;
+        
+        &:hover{
+            background-color: color.adjust(v.$rojo, $lightness: -15%);
+        }
+    }
+    
+    @include m.tablet{
+        
+        background-color: v.$blanco;
+        padding: 1rem 2rem;
+        box-shadow: 1px 12px 9px -13px rgba(0, 0, 0, .4);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+}

@@ -1,0 +1,60 @@
+@use "sass:color";
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// background-color: color.adjust(v.$azul, $lightness: -20%);
+
+@media (prefers-color-scheme: dark){
+    $grisOscuro: #1b1b1e;
+    $azulOscuro: #052a78;
+    $grisAzul: #242a33;
+
+    body{
+        scrollbar-width: thin;
+        scrollbar-color: v.$grisClaro $grisOscuro;
+    }
+
+    body, .principal, .principal .barra, .sidebar .cerrar-sesion-mobile a{
+        background-color: $grisOscuro;
+    }
+
+    .tagline, .formulario label, .contenedor-sm .formulario .campo input, .contenedor-sm .acciones a, .dashboard .enlace{
+        color: v.$blanco;
+    }
+
+    .contenedor-sm .formulario .campo input, .no-tareas{
+        background-color: $grisAzul;
+    }
+
+    .contenido .nombre-pagina, .contenido .proyecto a, .filtros-inputs h2, .filtros-inputs label, .listado-tareas .tarea p, .modal .formulario legend, .swal2-title, .swal2-html-container, .no-tareas{
+        color: v.$grisClaro;
+    }
+
+    .sidebar, .contenido .proyecto, .barra .cerrar-session, .contenedor-nueva-tarea .agregar-tarea, #filtros, .barra-mobile{
+        background-color: $azulOscuro;
+    }
+
+    .contenido .proyecto, .barra .cerrar-session, .contenedor-nueva-tarea .agregar-tarea, .sidebar .cerrar-sesion-mobile a{
+        &:hover{
+            background-color: color.adjust($azulOscuro, $lightness: -10%);
+        }
+    }
+
+    .modal .formulario{
+        background-color: $grisAzul;
+    }
+
+    .listado-tareas .tarea{
+        background-color: $grisAzul;
+        border: none;
+    }
+
+    .swal2-popup{
+        background-color: color.adjust(v.$grisOscuro, $lightness: -15%);
+    }
+
+    .no-tareas{
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+}

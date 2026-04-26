@@ -1,0 +1,22 @@
+@use "sass:color";
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.reestablecer{
+    .uptask{
+        @include m.textoDegradado(v.$azul, -25%);
+    }
+
+    input[type='submit']{
+        @include m.boton(v.$azul, v.$blanco);
+    }
+
+    .acciones{
+        a{
+            color: v.$azul;
+            &:hover{
+                color: color.adjust(v.$azul, $lightness: -15%);
+            }
+        }
+    }
+}
