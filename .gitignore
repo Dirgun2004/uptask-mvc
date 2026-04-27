@@ -1,4 +1,6 @@
 node_modules
 vendor
+package-lock.json
+package.json
 includes/.env
 includes/uptask_mvc.sql
