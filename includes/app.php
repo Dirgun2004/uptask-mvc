@@ -3,7 +3,7 @@
 use Model\ActiveRecord;
 require __DIR__ . '/../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..'); // El '/..' es obligatorio para subir a la raíz
 $dotenv->safeLoad();
 
 require 'funciones.php';
